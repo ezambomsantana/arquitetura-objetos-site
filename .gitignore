@@ -1,0 +1,5 @@
+# Saída do build e ambiente virtual local
+site/
+.venv/
+__pycache__/
+.DS_Store

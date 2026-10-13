@@ -1,0 +1,162 @@
+/*
+ * Identidade visual inspirada no site de Técnicas de Programação (Insper):
+ * títulos em Oswald azul-escuro, texto em Open Sans, código em Fira Mono sobre
+ * fundo azul muito claro, marcadores em estrela e avisos discretos.
+ * As cores de link e de código foram escurecidas em relação à referência para
+ * manter contraste mínimo de 4,5:1.
+ */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&display=swap");
+
+:root,
+[data-md-color-scheme="default"] {
+  --ao-titulo: #33408e;
+  --ao-destaque: #305fab;
+  --ao-marcador: #4477ca;
+  --ao-borda: #b7cdf0;
+  --ao-fundo-aviso: #eef3fc;
+
+  --md-default-bg-color: #fcfcfd;
+  --md-default-fg-color: #090a11;
+  --md-typeset-color: #090a11;
+  --md-typeset-a-color: var(--ao-destaque);
+  --md-accent-fg-color: #254983;
+
+  --md-code-bg-color: #f0f3ff;
+  --md-code-fg-color: #0d0d07;
+  --md-code-hl-keyword-color: #0058b8;
+  --md-code-hl-string-color: #9a5700;
+  --md-code-hl-number-color: #6b44b0;
+  --md-code-hl-constant-color: #6b44b0;
+  --md-code-hl-operator-color: #c2185b;
+  --md-code-hl-punctuation-color: #4d5f70;
+  --md-code-hl-comment-color: #5c6370;
+  --md-code-hl-function-color: #0d0d07;
+  --md-code-hl-name-color: #0d0d07;
+}
+
+/* Cabeçalho claro com o nome da disciplina em destaque */
+.md-header {
+  box-shadow: none;
+  border-bottom: 1px solid #e3e6f2;
+}
+.md-header__title {
+  color: var(--ao-titulo);
+  font-weight: 700;
+}
+
+/* Texto: coluna de leitura confortável */
+.md-typeset {
+  font-size: 0.85rem;
+  line-height: 1.75;
+}
+.md-content__inner {
+  max-width: 39rem;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+  font-family: "Oswald", "Open Sans", sans-serif;
+  font-weight: 600;
+  color: var(--ao-titulo);
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+.md-typeset h1 { font-size: 2.3em; margin-bottom: 0.6em; }
+.md-typeset h2 { font-size: 1.8em; margin-top: 1.8em; }
+.md-typeset h3 { font-size: 1.35em; }
+.md-typeset h4 { font-size: 1.1em; }
+
+.md-typeset a {
+  text-decoration: underline;
+  text-decoration-color: var(--ao-marcador);
+  text-underline-offset: 0.15em;
+}
+.md-typeset .headerlink,
+.md-typeset .md-button {
+  text-decoration: none;
+}
+.md-typeset strong {
+  color: var(--ao-destaque);
+}
+
+/* Marcadores em estrela, como na referência */
+.md-typeset ul:not([class]) {
+  list-style-type: "✦  ";
+}
+.md-typeset ul:not([class]) > li::marker {
+  color: var(--ao-marcador);
+}
+.md-typeset ul:not([class]) ul:not([class]) > li::marker {
+  color: #9db6e0;
+}
+
+/* Código */
+.md-typeset pre > code {
+  border-radius: 0.2em;
+}
+.md-typeset code {
+  border-radius: 0.2em;
+}
+
+/* Avisos e atividades: caixa azul-clara discreta */
+.md-typeset .admonition,
+.md-typeset details {
+  font-size: 0.8rem;
+  border: 0.08rem solid var(--ao-borda) !important;
+  border-radius: 0.2em;
+  background-color: var(--ao-fundo-aviso);
+  box-shadow: none;
+}
+.md-typeset .admonition-title,
+.md-typeset summary {
+  background-color: transparent !important;
+  font-family: "Oswald", "Open Sans", sans-serif;
+  font-weight: 500;
+  font-size: 1.05em;
+  color: var(--ao-titulo);
+}
+.md-typeset details details,
+.md-typeset .admonition details {
+  background-color: #fcfcfd;
+}
+
+/* Tabelas */
+.md-typeset table:not([class]) {
+  font-size: 0.75rem;
+  border: none;
+  box-shadow: none;
+}
+.md-typeset table:not([class]) th {
+  background-color: transparent;
+  color: var(--ao-titulo);
+  border-bottom: 0.1rem solid #626fc6;
+}
+.md-typeset table:not([class]) tbody tr:nth-child(odd) {
+  background-color: #eeeff6;
+}
+
+/* Menu lateral */
+.md-nav__title,
+.md-nav__item--section > .md-nav__link {
+  color: var(--ao-titulo);
+}
+.md-nav__link--active,
+.md-nav__item .md-nav__link--active {
+  color: var(--ao-destaque);
+  font-weight: 700;
+}
+
+.md-footer-meta {
+  background-color: #262f69;
+}
+
+/* Números de linha e cabeçalhos de tabela com código */
+.md-typeset .highlight .linenos a,
+.md-typeset .highlight .linenodiv a {
+  text-decoration: none;
+}
+.md-typeset table:not([class]) th code {
+  white-space: nowrap;
+}

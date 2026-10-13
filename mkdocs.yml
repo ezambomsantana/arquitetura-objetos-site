@@ -1,0 +1,109 @@
+# Site de apoio — Arquitetura de Objetos
+# Para publicar em outro usuário ou repositório, ajuste a linha site_url.
+# O formato é https://USUARIO.github.io/NOME-DO-REPOSITORIO/
+site_name: Arquitetura de Objetos
+site_url: https://lukenthexplorer.github.io/arquitetura-objetos-site/
+
+site_description: Roteiros de estudo para acompanhar os códigos das aulas de Arquitetura de Objetos.
+copyright: Material de apoio à disciplina do Prof. Eduardo Felipe Zambom Santana. Proposta em revisão, ainda não validada por ele.
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  language: pt-BR
+  font:
+    text: Open Sans
+    code: Fira Mono
+  palette:
+    scheme: default
+    primary: white
+    accent: indigo
+  features:
+    - navigation.footer      # links "Anterior" e "Próximo"
+    - navigation.top         # botão "voltar ao topo"
+    - toc.integrate          # sumário da página dentro do menu, como na referência
+    - content.code.copy
+    - search.highlight
+    - search.suggest
+
+extra_css:
+  - assets/css/extra.css
+
+plugins:
+  - search:
+      lang: pt
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 2
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+validation:
+  nav:
+    omitted_files: warn
+    not_found: warn
+    absolute_links: warn
+  links:
+    not_found: warn
+    anchors: warn
+    absolute_links: warn
+    unrecognized_links: warn
+
+# Uma aula só entra no menu quando o roteiro está pronto.
+# A lista de aulas da página inicial fica em docs/index.md.
+nav:
+  - Início: index.md
+  - Aula 02 — Classes e objetos:
+      - Material: aulas/aula-02/material.md
+      - Exercícios: aulas/aula-02/exercicios.md
+  - Aula 03 — Encapsulamento e relacionamentos:
+      - Material: aulas/aula-03/material.md
+      - Exercícios: aulas/aula-03/exercicios.md
+  - Aula 04 — Aula estúdio de objetos:
+      - Material: aulas/aula-04/material.md
+      - Exercícios: aulas/aula-04/exercicios.md
+  - Aula 05 — Primeira API REST:
+      - Material: aulas/aula-05/material.md
+      - Exercícios: aulas/aula-05/exercicios.md
+  - Aula 06 — Injeção de dependência:
+      - Material: aulas/aula-06/material.md
+      - Exercícios: aulas/aula-06/exercicios.md
+  - Aula 07 — Aula estúdio de APIs:
+      - Material: aulas/aula-07/material.md
+      - Exercícios: aulas/aula-07/exercicios.md
+  - Aula 08 — Documentação, DTOs e erros:
+      - Material: aulas/aula-08/material.md
+      - Exercícios: aulas/aula-08/exercicios.md
+  - Aula 09 — Autenticação:
+      - Material: aulas/aula-09/material.md
+      - Exercícios: aulas/aula-09/exercicios.md
+  - Aula 10 — Aula estúdio de API completa:
+      - Material: aulas/aula-10/material.md
+      - Exercícios: aulas/aula-10/exercicios.md
+  - Aula 11 — Herança e interfaces:
+      - Material: aulas/aula-11/material.md
+      - Exercícios: aulas/aula-11/exercicios.md
+  - Aula 12 — Banco de dados com JPA:
+      - Material: aulas/aula-12/material.md
+      - Exercícios: aulas/aula-12/exercicios.md
+  - Aula 13 — Relacionamentos e usuários no banco:
+      - Material: aulas/aula-13/material.md
+      - Exercícios: aulas/aula-13/exercicios.md
+  - Aula 14 — Tokens JWT e validação:
+      - Material: aulas/aula-14/material.md
+      - Exercícios: aulas/aula-14/exercicios.md
+  - Referência rápida: referencia/java.md
+  - Glossário: referencia/glossario.md

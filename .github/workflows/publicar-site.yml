@@ -1,0 +1,53 @@
+# Gera o site com MkDocs e publica no GitHub Pages.
+#
+# Antes da primeira execução, no repositório do GitHub:
+#   Settings > Pages > Build and deployment > Source: "GitHub Actions"
+#
+# Se o site estiver em uma subpasta do repositório (por exemplo "site-disciplina"),
+# este arquivo precisa ficar em .github/workflows/ na RAIZ do repositório,
+# e a variável PASTA_DO_SITE abaixo deve apontar para a subpasta.
+
+name: Publicar site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  PASTA_DO_SITE: .
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  gerar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Instalar dependências
+        run: pip install -r "$PASTA_DO_SITE/requirements.txt"
+      - name: Gerar o site
+        run: mkdocs build --strict --config-file "$PASTA_DO_SITE/mkdocs.yml"
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ env.PASTA_DO_SITE }}/site
+
+  publicar:
+    needs: gerar
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4
