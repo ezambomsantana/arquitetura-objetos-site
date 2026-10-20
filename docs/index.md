@@ -4,9 +4,6 @@
 
 Acompanhe a construção dos programas desenvolvidos em aula, passo a passo. Cada roteiro indica o que escrever, apresenta os novos conceitos no momento em que são necessários e mostra o resultado esperado de cada execução.
 
-!!! note "Material independente"
-    Este material foi elaborado por um aluno como apoio à disciplina e ainda não foi revisado pelo professor. Os códigos têm como referência os programas desenvolvidos em aula; as explicações e os exercícios complementares são materiais de apoio.
-
 ## Como estudar
 
 - **Siga a sequência:** cada aula dá continuidade ao programa anterior, salvo quando indicado.
